@@ -19,12 +19,8 @@ function login(e) {
 
 async function signup(e) {
     e.preventDefault()
-    const username = e.target.username.value
-    const email = e.target.email.value
-    const password = e.target.password.value
-    if (!username || !password || !email) {console.log("incomplete form")}
-    else {
         try {
+            console.log(JSON.stringify(Object.fromEntries(new FormData(e.target))))
             const options = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -38,7 +34,6 @@ async function signup(e) {
             console.warn(err);
         }
     }
-}
 
 
 function listUsers() {

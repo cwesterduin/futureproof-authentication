@@ -9,9 +9,9 @@ app.use(bodyParser.json())
 app.get('/', (req, res) => res.json({ message: 'Welcome' }));
 
 const userRoutes = require('./users');
-app.use('/users', userRoutes);
-
 const authRoutes = require('./auth');
+
+app.use('/users', userRoutes);
 app.use('/auth', authRoutes);
 
 module.exports = app
