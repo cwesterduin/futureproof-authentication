@@ -8,4 +8,7 @@ app.use(bodyParser.json())
 
 app.get('/', (req, res) => res.json({ message: 'Welcome' }));
 
+const userRoutes = require('./users');
+app.use('/users', userRoutes);
+
 module.exports = app
